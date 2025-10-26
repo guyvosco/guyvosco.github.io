@@ -48,8 +48,11 @@
       .brand a {
         color: var(--text);
         text-decoration: none;
-        font-weight: 700;
-        letter-spacing: 0.2px;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        font-size: 2.2rem;        /* 🔹 Bigger site title */
+        line-height: 1.1;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.4); /* subtle depth */
       }
       nav a {
         color: var(--muted);
@@ -57,6 +60,7 @@
         padding: 8px 12px;
         border-radius: 999px;
         backdrop-filter: blur(6px);
+        transition: background 0.2s ease, color 0.2s ease;
       }
       nav a:hover { color: var(--link-hover); background: var(--card-bg); }
       .card {
@@ -73,6 +77,19 @@
         color: var(--muted);
         font-size: 0.9rem;
         opacity: 0.9;
+        margin-top: 3rem;
+        text-align: center;
+      }
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+        }
+        nav {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
       }
     </style>
   </head>
@@ -82,9 +99,11 @@
         <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
       </div>
       <nav aria-label="Main">
-        <a href="{{ site.github }}">GitHub</a>
-        <a href="{{ site.linkedin }}">LinkedIn</a>
-        <a href="{{ site.google_scholar }}">Google Scholar</a>
+        <a href="{{ "/" | relative_url }}">Home</a>
+        <a href="{{ "/about/" | relative_url }}">About</a>
+        {% if site.github %}<a href="{{ site.github }}">GitHub</a>{% endif %}
+        {% if site.linkedin %}<a href="{{ site.linkedin }}">LinkedIn</a>{% endif %}
+        {% if site.google_scholar %}<a href="{{ site.google_scholar }}">Google Scholar</a>{% endif %}
       </nav>
     </header>
 
