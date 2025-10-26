@@ -24,7 +24,7 @@
         color: var(--text);
         line-height: 1.6;
       }
-      /* Background image with 50% black overlay */
+      
       body::before {
         content: "";
         position: fixed;
@@ -50,9 +50,9 @@
         text-decoration: none;
         font-weight: 800;
         letter-spacing: 0.3px;
-        font-size: 2.2rem;        /* 🔹 Bigger site title */
+        font-size: 2.2rem;
         line-height: 1.1;
-        text-shadow: 0 2px 8px rgba(0,0,0,0.4); /* subtle depth */
+        text-shadow: 0 2px 8px rgba(0,0,0,0.4);
       }
       nav a {
         color: var(--muted);
@@ -73,6 +73,15 @@
       }
       a { color: var(--link); }
       a:hover { color: var(--link-hover); }
+
+      main img {
+        display: block;
+        max-width: 50%;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 12px;
+      }
+
       footer {
         color: var(--muted);
         font-size: 0.9rem;
@@ -89,6 +98,9 @@
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
+        }
+        main img {
+          max-width: 90%;
         }
       }
     </style>
